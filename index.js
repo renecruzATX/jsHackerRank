@@ -6,12 +6,13 @@ function getMinimumCost(k, c) {
   if (k >= c.length) {
     totalPrice = c.reduce((a,b)=>a+b)
   } else {
-    for(let i=0; i<c.length; i++) {
+    let i = 0;
+    while (i <c.length) {
       totalPrice += Math.floor(i/k + 1) * c[i];
-    }
+      i++
+    }      
   }
-  console.log(c)
   return totalPrice;
 }
 
-getMinimumCost(3, [ 1, 3, 5, 7, 9 ])
+getMinimumCost(4, [ 1, 11, 3, 5, 7, 9 ])
