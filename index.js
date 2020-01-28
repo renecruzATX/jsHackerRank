@@ -1,18 +1,2 @@
-/*To solve this problem what we need to do is to sort the flower base prices by increasing or decreasing order. Whichever you like better. I like to iterate arrays bottom up so i chose decreasing price. Now we need an array to keep track of the purchases of the friends initialized to 0s. We can get the minimum cost by choosing the (i%k)th person to buy the ith most expensive flower and add the adjusted price to our solution. After this we add one to the (i%k)th person’s purchases so the next time he buys a flower, the florist charges the adjusted price.*/
+/*This repository is my JavaScript submissions to HackerRank*/
 
-function getMinimumCost(k, c) {
-  c.sort((a, b)=>b-a)
-  let totalPrice = 0
-  if (k >= c.length) {
-    totalPrice = c.reduce((a,b)=>a+b)
-  } else {
-    let i = 0;
-    while (i <c.length) {
-      totalPrice += Math.floor(i/k + 1) * c[i];
-      i++
-    }      
-  }
-  return totalPrice;
-}
-
-getMinimumCost(4, [ 1, 11, 3, 5, 7, 9 ])
